@@ -1,1 +1,15 @@
-// Custom Variables
+// Dimensions
+$navbar-height: 64px;
+$project-ratio: 80%;
+$browser-ratio: 120%;
+$iphone-ratio:  217%;
+
+// Color
+$overlay-bg:     rgba($dark, 0.3);
+$browser-bg:     $dark;
+$browser-border: $black;
+$iphone-bg:      $white;
+$iphone-border:  $black;
+
+// Z-Indexes
+$zindex-footer: 999;

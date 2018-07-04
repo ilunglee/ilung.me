@@ -1,0 +1,7 @@
+section#hero.rounded-0.d-flex.justify-content-center.align-items-center.mb-0.text-center
+  .container
+    h2.display-2.mb-3
+      = t('.heading')
+      = image_tag 'logo-full.png', class: 'logo ml-4'
+    h4.text-secondary
+      span[data-js='typed' data-typed-options={ strings: t('.taglines') }.to_json]

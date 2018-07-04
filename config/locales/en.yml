@@ -1,23 +1,28 @@
-# Files in the config/locales directory are used for internationalization
-# and are automatically loaded by Rails. If you want to use locales other
-# than English, add the necessary files in this directory.
-#
-# To use the locales, use `I18n.t`:
-#
-#     I18n.t 'hello'
-#
-# In views, this is aliased to just `t`:
-#
-#     <%= t('hello') %>
-#
-# To use a different locale, set it with `I18n.locale`:
-#
-#     I18n.locale = :es
-#
-# This would use the information in config/locales/es.yml.
-#
-# To learn more, please read the Rails Internationalization guide
-# available at http://guides.rubyonrails.org/i18n.html.
-
 en:
-  hello: "Hello world"
+  variables:
+    app_name: &APP_NAME ilung.me
+    brief:    &BRIEF Hello I am I-Lung, I build website & apps!
+    url:      &URL   https://ilung.me
+    email:    &EMAIL ilung.me@gmail.com
+
+  home:
+    hero:
+      heading: Hello I'm
+      taglines:
+        - I build Website &amp; Mobile Apps
+        - Leave your project to me &amp; I'll make it happen
+    projects:
+      title: My Work
+      more: and more coming soon
+
+  components:
+    footer:
+      email:     *EMAIL
+      copyright: © %{year} ilung.me. All Rights Reserved.
+      links:
+        - icon: facebook-square
+          url:  https://www.facebook.com/ilung.lee
+        - icon: linkedin-square
+          url:  https://www.linkedin.com/in/i-lung-lee-55b80188
+        - icon: github
+          url:  https://github.com/ilunglee

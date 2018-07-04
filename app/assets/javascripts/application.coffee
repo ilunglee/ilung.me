@@ -18,13 +18,15 @@
 #= require turbolinks
 #= require holder
 #= require typekit
+#= require typed
 #= require responsive-images
-#= require_tree ./utilities
 #= require_self
+#= require_tree ./lib
+#= require_tree ./utilities
 
 window.App = {}
 
 onDOMReady = ->
-  console.log 'DOM ready'
+  $('[data-js="typed"]').appTyped()
 
 $(document).on('page:load turbolinks:load', onDOMReady)

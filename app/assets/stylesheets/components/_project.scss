@@ -1,0 +1,77 @@
+.project {
+  @extend %background-cover;
+  position: relative;
+  overflow: hidden;
+  background-position: center top;
+
+  &.playing {
+    &::before { opacity: 0; }
+    .gif-play { display: block; }
+    .content  { display: none !important; }
+  }
+
+  &::before {
+    z-index: 11;
+    display: block;
+    padding-top: $project-ratio;
+    background: $overlay-bg;
+    content: '';
+  }
+
+  .content {
+    position: absolute;
+    top: 0;
+    right: 0;
+    bottom: 0;
+    left: 0;
+    z-index: 22;
+    padding: 2 * $spacer;
+    padding-bottom: 0;
+  }
+
+  .body {
+    display: flex;
+    flex: 1;
+    flex-direction: column;
+  }
+
+  .description {
+    @include ellipsis($lines: 2);
+  }
+
+  .previews {
+    position: relative;
+    display: flex;
+    flex: 1;
+    @include transform(translateY(20px));
+
+    .browser-artboard {
+      position: absolute;
+      top: 0;
+      right: 0;
+      bottom: 0;
+      left: 0;
+    }
+
+    .iphone-artboard {
+      position: absolute;
+      top: 20%;
+      right: -#{$spacer};
+      bottom: 0;
+      z-index: 11;
+      width: 33%;
+    }
+  }
+
+  .gif-play {
+    @extend %background-cover;
+    position: absolute;
+    top: 0;
+    right: 0;
+    bottom: 0;
+    left: 0;
+    z-index: 1;
+    display: none;
+    background-position: center top;
+  }
+}

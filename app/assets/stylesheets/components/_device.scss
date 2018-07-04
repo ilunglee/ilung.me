@@ -1,0 +1,98 @@
+%frame {
+  position: absolute;
+  top: 0;
+  right: 0;
+  bottom: 0;
+  left: 0;
+  display: flex;
+  flex-direction: column;
+}
+
+%header {
+  display: flex;
+  align-items: center;
+  width: 100%;
+  height: 2.5 * $spacer;
+  padding: 0 $spacer;
+}
+
+.browser-artboard {
+  position: relative;
+  width: 100%;
+  background: $browser-bg;
+  border: 2px solid $browser-border;
+  border-radius: $border-radius;
+
+  &::before {
+    display: block;
+    padding-top: $browser-ratio;
+    content: '';
+  }
+
+  .frame { @extend %frame; }
+
+  .header {
+    @extend %header;
+    border-bottom: 1px solid $browser-border;
+
+    .ctrls {
+      display: flex;
+
+      span {
+        display: block;
+        width: $spacer / 2;
+        height: $spacer / 2;
+        margin-right: $spacer / 2;
+        border-radius: 50%;
+      }
+    }
+  }
+
+  .body img { width: 100%; }
+}
+
+.iphone-artboard {
+  position: relative;
+  width: 100%;
+  background: $iphone-bg;
+  border: 4px solid $iphone-border;
+  border-radius: 1rem;
+
+  &::before {
+    display: block;
+    padding-top: $iphone-ratio;
+    content: '';
+  }
+
+  .frame { @extend %frame; }
+
+  .header {
+    @extend %header;
+    flex-direction: column;
+    justify-content: center;
+
+    .camera {
+      width: $spacer / 2;
+      height: $spacer / 2;
+      margin: 0 auto;
+      margin-bottom: $spacer / 3;
+      background: $iphone-border;
+      border-radius: 50%;
+    }
+
+    .soundbar {
+      width: 20%;
+      height: 4px;
+      background: $iphone-border;
+      border-radius: 2px;
+    }
+  }
+
+  .body {
+    margin: $spacer / 2;
+    margin-top: 0;
+    background: $iphone-border;
+    border-radius: $border-radius;
+    img { width: 100%; }
+  }
+}

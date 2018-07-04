@@ -1,0 +1,128 @@
+section#projects
+  .container-fluid
+    .mb-5.text-center
+      h4.display-4.mb-0
+        = t('.title')
+      h4.dots.appear
+        - %w[primary warning danger].each do |color|
+          span[class="text-#{color}"] .
+    .row
+      .col-md-6.px-0
+        .project.bg-darker
+          .content.d-flex.flex-column
+            .body
+              .info
+                h5.text-warning Wrap ActiveAdmin
+                p.description.mb-0 Theme for popular Ruby On Rails admin framework.
+              .previews
+                = render 'components/devices/browser' do
+                  / = image_tag 'projects/amei.png'
+          .gif-play[style="background-image: url('#{image_path("projects/amei.gif")}')"]
+      .col-md-6.px-0
+        .project.bg-darker.bg-springshow
+          .content.d-flex.flex-column
+            .body
+              .info
+                h5.text-warning Online Ticketing System
+                p.description.mb-0 Online & Offline ticket selling application for event organizers.
+              .previews
+                = render 'components/devices/browser' do
+                  / = image_tag 'projects/ticketing.png'
+                = render 'components/devices/iphone' do
+                  / = image_tag 'projects/ticketing.png'
+      .col-md-6.px-0
+        .project.bg-darker.bg-mymode
+          .content.d-flex.flex-column
+            .body
+              .info
+                h5.text-warning MyMode
+                p.description.mb-0 Fashion model scouting platform for angencies.
+              .previews
+                = render 'components/devices/browser' do
+                  / = image_tag 'projects/ticketing.png'
+                = render 'components/devices/iphone' do
+                  / = image_tag 'projects/ticketing.png'
+      .col-md-6.px-0
+        .project.bg-darker
+          .content.d-flex.flex-column
+            .body
+              .info
+                h5.text-warning Amei | Utopia
+                p.description.mb-0 Amei, popular singer from Taiwan, world tour vancouver concert.
+              .previews
+                = render 'components/devices/browser' do
+                  / = image_tag 'projects/ticketing.png'
+          .gif-play[style="background-image: url('#{image_path("projects/amei.gif")}')"]
+      .col-md-6.px-0
+        .project.bg-darker.bg-springshow
+          .content.d-flex.flex-column
+            .body
+              .info
+                h5.text-warning Vancouver Spring Show
+                p.description.mb-0 Annual event that celebrates multiculturalism, and features top artists around the world.
+              .previews
+                = render 'components/devices/browser' do
+                  / = image_tag 'projects/ticketing.png'
+                = render 'components/devices/iphone' do
+                  / = image_tag 'projects/ticketing.png'
+      .col-md-6.px-0
+        .project.bg-darker.bg-bitehub
+          .content.d-flex.flex-column
+            .body
+              .info
+                h5.text-warning BiteHub CRM
+                p.description.mb-0 Annual event that celebrates multiculturalism, and features top artists around the world.
+              .previews
+                = render 'components/devices/browser' do
+                  / = image_tag 'projects/ticketing.png'
+                = render 'components/devices/iphone' do
+                  / = image_tag 'projects/ticketing.png'
+      .col-md-6.px-0
+        .project.bg-darker.bg-everme
+           .content.d-flex.flex-column
+            .body
+              .info
+                h5.text-warning Everme Hair Design
+                p.description.mb-0 Annual event that celebrates multiculturalism, and features top artists around the world.
+              .previews
+                = render 'components/devices/browser' do
+                  / = image_tag 'projects/ticketing.png'
+      .col-md-6.px-0
+        .project.bg-darker.bg-fcwr
+          .content.d-flex.flex-column
+            .body
+              .info
+                h5.text-warning FCWR TV Show
+                p.description.mb-0 Annual event that celebrates multiculturalism, and features top artists around the world.
+              .previews
+                = render 'components/devices/browser' do
+                  / = image_tag 'projects/ticketing.png'
+      .col-md-6.px-0
+        .project.bg-darker.bg-hce
+          .content.d-flex.flex-column
+            .body
+              .info
+                h5.text-warning Haircut Express
+                p.description.mb-0 Annual event that celebrates multiculturalism, and features top artists around the world.
+              .previews
+                = render 'components/devices/browser' do
+                  / = image_tag 'projects/ticketing.png'
+      .col-md-6.px-0
+        .project.bg-darker.bg-dashboard
+          .content.d-flex.flex-column
+            .body
+              .info
+                h5.text-warning Custom Dashboard
+                p.description.mb-0 Annual event that celebrates multiculturalism, and features top artists around the world.
+              .previews
+                = render 'components/devices/browser' do
+                  / = image_tag 'projects/ticketing.png'
+      .col.d-flex.justify-content-center.align-items-center.border-top
+        h4.text-secondary.my-4
+          = t('.more')
+          | &nbsp;
+          span.dots.bounce
+            - %w[primary warning danger].each do |color|
+              span[class="text-#{color}"] .
+      = render @projects, cached: true
+

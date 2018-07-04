@@ -1,0 +1,16 @@
+footer#footer.navbar.navbar-dark.bg-darker.navbar-expand
+  .w-100
+    .row
+      .col-md-3.d-flex.align-items-center.justify-content-center
+        ul.navbar-nav.mx-auto.ml-md-0
+          li.nav-item
+            = email_link t('.email'), class: 'nav-link small'
+      .col-md-6.d-flex.align-items-center.justify-content-center
+        .navbar-text.small
+          = t('.copyright', year: Time.zone.now.year)
+      .col-md-3.d-flex.align-items-center.justify-content-center
+        ul.navbar-nav.mx-auto.mr-md-0
+          - t('.links').each do |link|
+            li.nav-item
+              = link_to link[:url], class: 'nav-link h4 mb-0', target: '_blank' do
+                = fa_icon(link[:icon], class: 'd-block')

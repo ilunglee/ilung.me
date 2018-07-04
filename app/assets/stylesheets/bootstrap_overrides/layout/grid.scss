@@ -1,1 +1,6 @@
 // https://getbootstrap.com/docs/4.0/layout/grid/
+@for $i from 1 to 12 {
+  .flex-#{$i} {
+    flex: $i;
+  }
+}

@@ -1,1 +1,8 @@
 // https://getbootstrap.com/docs/4.0/components/navbar/
+.navbar {
+  min-height: $navbar-height;
+}
+
+.navbar-brand img {
+  height: calc(#{$navbar-height} - #{$spacer} * 2);
+}

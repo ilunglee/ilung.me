@@ -41,7 +41,7 @@ gem 'devise'
 # Use Stripe for payment
 gem 'stripe'
 # Use CB ActiveAdmin for default backend
-# gem 'cb_stem', git: 'https://github.com/cleverbanana/cl0000-cb20-stem.git', tag: '1.0.9.6alpha'
+gem 'cb_stem', git: 'https://github.com/cleverbanana/cl0000-cb20-stem.git', tag: '1.0.9.7alpha'
 # Use CanCan
 gem 'cancancan', '~> 2.0'
 # Use fontawesome for default icons
@@ -170,7 +170,7 @@ group :development do
   # Generate ERD
   gem 'rails-erd'
   # Profiles Queries
-  gem 'rack-mini-profiler'
+  # gem 'rack-mini-profiler'
   # For call-stack profiling flamegraphs
   gem 'flamegraph'
   gem 'stackprof'

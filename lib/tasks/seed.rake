@@ -8,11 +8,19 @@ namespace :db do
       end
     end
 
+    desc 'Setup'
+    task setup: :environment do
+      Rake::Task['db:cb_stem:seed:admin_user'].invoke
+      %w[].each do |x|
+        Rake::Task["db:seed:#{x}"].invoke
+      end
+    end
+
     desc 'Seed everything'
     task all: :environment do
-      Dir[Rails.root.join('db', 'seeds', '*.rb')].each do |filename|
-        task_name = File.basename(filename, '.rb')
-        Rake::Task["db:seed:#{task_name}"].invoke
+      Rake::Task['db:seed:setup'].invoke
+      %w[].each do |x|
+        Rake::Task["db:seed:#{x}"].invoke
       end
     end
   end
