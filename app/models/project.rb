@@ -1,12 +1,38 @@
 class Project < ApplicationRecord
 
-  mount_uploader :background, CbStem::MediaUploader
+  DEVICES = %w[iphone browser epos square].freeze
 
-  validates :name, :video_url, :background,
+  mount_uploader :browser, CbStem::MediaUploader
+  mount_uploader :mobile,  CbStem::MediaUploader
+  mount_uploader :video,   CbStem::MediaUploader
+
+  acts_as_list add_new_at: :top
+
+  validates :title, :description,
             presence: true
 
-  def background_extension_whitelist
+  validate :valid_devices
+
+  def browser_extension_whitelist
     CbStem::MediaUploader::IMAGE_TYPES
+  end
+
+  def mobile_extension_whitelist
+    CbStem::MediaUploader::IMAGE_TYPES
+  end
+
+  def video_extension_whitelist
+    %i[gif]
+  end
+
+  private
+
+  def valid_devices
+    invalids = (devices - DEVICES)
+    return if invalids.blank?
+    invalids.each do |invalid|
+      errors.add(:devices, "#{invalid} #{I18n.t(:inclusion, scope: %i[errors messages])}")
+    end
   end
 
 end

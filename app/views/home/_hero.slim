@@ -5,3 +5,10 @@ section#hero.rounded-0.d-flex.justify-content-center.align-items-center.mb-0.tex
       = image_tag 'logo-full.png', class: 'logo ml-4'
     h4.text-secondary
       span[data-js='typed' data-typed-options={ strings: t('.taglines') }.to_json]
+  .line-y.bottom.h-25
+    = link_to '#projects',
+              class: 'btn-scroll btn btn-outline-secondary text-white shine',
+              data: { turbolinks: false, js: 'smooth-scroll' } do
+      = t('.projects')
+      br/
+      = fa_icon('chevron-down')

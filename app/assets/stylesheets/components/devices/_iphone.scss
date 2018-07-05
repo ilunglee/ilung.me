@@ -1,0 +1,48 @@
+.iphone-artboard {
+  position: relative;
+  width: 100%;
+  min-width: 132px;
+  background: $iphone-bg;
+  border: 4px solid $iphone-border;
+  border-radius: 1rem;
+
+  &::before {
+    display: block;
+    padding-top: $iphone-ratio;
+    content: '';
+  }
+
+  .device-frame { @extend %frame; }
+
+  .device-header {
+    @extend %header;
+    flex-direction: column;
+    justify-content: center;
+
+    .camera {
+      width: $spacer / 2;
+      height: $spacer / 2;
+      margin: 0 auto;
+      margin-bottom: $spacer / 3;
+      background: $iphone-border;
+      border-radius: 50%;
+    }
+
+    .soundbar {
+      width: 30%;
+      height: 3px;
+      background: $iphone-border;
+      border-radius: 2px;
+    }
+  }
+
+  .device-body {
+    margin: $spacer / 2;
+    margin-top: 0;
+    overflow: hidden;
+    background: $iphone-border;
+    border: 1px solid $iphone-border;
+    border-radius: $border-radius;
+    img { width: 100%; }
+  }
+}

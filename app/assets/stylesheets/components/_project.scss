@@ -1,14 +1,9 @@
 .project {
   @extend %background-cover;
   position: relative;
+  z-index: 1;
   overflow: hidden;
   background-position: center top;
-
-  &.playing {
-    &::before { opacity: 0; }
-    .gif-play { display: block; }
-    .content  { display: none !important; }
-  }
 
   &::before {
     z-index: 11;
@@ -16,6 +11,10 @@
     padding-top: $project-ratio;
     background: $overlay-bg;
     content: '';
+
+    @include  media-breakpoint-down(xs) {
+      padding-top: $project-ratio * 1.2;
+    }
   }
 
   .content {
@@ -61,17 +60,21 @@
       z-index: 11;
       width: 33%;
     }
-  }
 
-  .gif-play {
-    @extend %background-cover;
-    position: absolute;
-    top: 0;
-    right: 0;
-    bottom: 0;
-    left: 0;
-    z-index: 1;
-    display: none;
-    background-position: center top;
+    .square-artboard {
+      position: absolute;
+      bottom: 0;
+      left: calc(25% - 5 * #{$spacer});
+      z-index: 22;
+      width: 20%;
+    }
+
+    .epos-artboard {
+      position: absolute;
+      bottom: 0;
+      left: -2.5 * $spacer;
+      z-index: 19;
+      width: 25%;
+    }
   }
 }

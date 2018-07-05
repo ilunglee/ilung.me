@@ -1,0 +1,18 @@
+.col-md-6.px-0
+  .project[style="background-color: #{project.background_color}"]
+    .content.d-flex.flex-column
+      .body
+        .info
+          h5.text-warning= project.title
+          p.description.mb-0= project.description
+        .previews
+          - if project.devices.include? 'browser'
+            = render 'components/devices/browser' do
+              = image_tag project.browser_url(:lg)
+          - if project.devices.include? 'iphone'
+            = render 'components/devices/iphone' do
+              = image_tag project.mobile_url(:lg)
+          - if project.devices.include? 'square'
+            = render 'components/devices/square'
+          - if project.devices.include? 'epos'
+            = render 'components/devices/epos'

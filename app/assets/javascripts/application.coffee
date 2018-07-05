@@ -19,6 +19,7 @@
 #= require holder
 #= require typekit
 #= require typed
+#= require smooth-scroll
 #= require responsive-images
 #= require_self
 #= require_tree ./lib
@@ -28,5 +29,6 @@ window.App = {}
 
 onDOMReady = ->
   $('[data-js="typed"]').appTyped()
+  $('[data-js="smooth-scroll"]').smoothScroll()
 
 $(document).on('page:load turbolinks:load', onDOMReady)

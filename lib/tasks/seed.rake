@@ -11,7 +11,7 @@ namespace :db do
     desc 'Setup'
     task setup: :environment do
       Rake::Task['db:cb_stem:seed:admin_user'].invoke
-      %w[].each do |x|
+      %w[projects].each do |x|
         Rake::Task["db:seed:#{x}"].invoke
       end
     end

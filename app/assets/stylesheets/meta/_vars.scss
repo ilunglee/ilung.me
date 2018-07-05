@@ -1,6 +1,6 @@
 // Dimensions
 $navbar-height: 64px;
-$project-ratio: 80%;
+$project-ratio: 74%;
 $browser-ratio: 120%;
 $iphone-ratio:  217%;
 
@@ -8,8 +8,12 @@ $iphone-ratio:  217%;
 $overlay-bg:     rgba($dark, 0.3);
 $browser-bg:     $dark;
 $browser-border: $black;
-$iphone-bg:      $white;
+$iphone-bg:      $dark;
 $iphone-border:  $black;
+$square-bg:      $white;
+$square-border:  $black;
+$epos-bg:        $dark;
+$epos-border:    $black;
 
 // Z-Indexes
 $zindex-footer: 999;

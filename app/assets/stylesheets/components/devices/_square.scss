@@ -1,0 +1,59 @@
+@keyframes beep {
+  0%   { background: $gray-100; }
+  50%  { background: $success; }
+  100% { background: $gray-100; }
+}
+
+.square-artboard {
+  position: relative;
+  width: 100%;
+  min-width: 80px;
+  background: $square-bg;
+  border: 2px solid $square-border;
+  border-radius: 1rem;
+
+  &::before {
+    display: block;
+    padding-top: 100%;
+    content: '';
+  }
+
+  .device-frame { @extend %frame; }
+
+  .censor {
+    position: relative;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    padding: $spacer / 2;
+
+    span {
+      display: inline-block;
+      width: 4px;
+      height: 4px;
+      margin: 0 2px;
+      border-radius: 50%;
+      @include animation(beep 3s infinite ease-out);
+
+      &:nth-child(2) { animation-delay: 0.3s; }
+      &:nth-child(3) { animation-delay: 0.5s; }
+      &:nth-child(4) { animation-delay: 0.7s; }
+    }
+  }
+
+  .device-body {
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    width: 64%;
+    height: 64%;
+    background: $gray-200;
+    border-radius: $border-radius;
+    @include transform(translate(-50%, -50%));
+
+    img { height: 20%; }
+  }
+}

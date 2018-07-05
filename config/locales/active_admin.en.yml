@@ -1,0 +1,4 @@
+en:
+  active_admin:
+    panels:
+      reset_password: Reset Password

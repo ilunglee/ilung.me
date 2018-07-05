@@ -9,16 +9,18 @@ en:
     hero:
       heading: Hello I'm
       taglines:
-        - I build Website &amp; Mobile Apps
+        - I build Web &amp; Mobile Apps
         - Leave your project to me &amp; I'll make it happen
+      projects: See My Work
     projects:
-      title: My Work
       more: and more coming soon
 
   components:
+    nav:
+      hire: Hire Me
     footer:
       email:     *EMAIL
-      copyright: © %{year} ilung.me. All Rights Reserved.
+      copyright: © %{year} %{logo} All Rights Reserved.
       links:
         - icon: facebook-square
           url:  https://www.facebook.com/ilung.lee

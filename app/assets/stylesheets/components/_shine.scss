@@ -1,0 +1,47 @@
+// sass-lint:disable no-color-literals
+.shine {
+  position: relative;
+  overflow: hidden;
+
+  &::before {
+    position: absolute;
+    top: 0;
+    left: 0;
+    display: block;
+    width: 60px;
+    height: 100%;
+    background: rgba($white, 0.5);
+    content: '';
+    opacity: 0.5;
+    filter: blur(30px);
+    @include transform(translateX(-100px) skewX(-15deg));
+  }
+
+  &::after {
+    position: absolute;
+    top: 0;
+    left: 30px;
+    display: block;
+    width: 30px;
+    height: 100%;
+    background: rgba($white, 0.2);
+    content: '';
+    opacity: 0;
+    filter: blur(5px);
+    @include transform(translateX(-100px) skewX(-15deg));
+  }
+
+  &:hover {
+    &::before {
+      opacity: 0.6;
+      @include transform(translateX(300px) skewX(-15deg));
+      transition: 0.7s;
+    }
+
+    &::after {
+      opacity: 1;
+      @include transform(translateX(300px) skewX(-15deg));
+      transition: 0.7s;
+    }
+  }
+}

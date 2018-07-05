@@ -6,8 +6,9 @@ footer#footer.navbar.navbar-dark.bg-darker.navbar-expand
           li.nav-item
             = email_link t('.email'), class: 'nav-link small'
       .col-md-6.d-flex.align-items-center.justify-content-center
-        .navbar-text.small
-          = t('.copyright', year: Time.zone.now.year)
+        .navbar-text.small.d-flex.align-items-center
+          - logo = image_tag 'logo-full.png', class: 'logo mx-2'
+          == t('.copyright', year: Time.zone.now.year, logo: logo)
       .col-md-3.d-flex.align-items-center.justify-content-center
         ul.navbar-nav.mx-auto.mr-md-0
           - t('.links').each do |link|

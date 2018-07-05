@@ -16,7 +16,7 @@ $gray-300: #bbbbbb !default;
 $gray-400: #ced4da !default;
 $gray-500: #adb5bd !default;
 $gray-600: #8d9299 !default;
-$gray-700: #495057 !default;
+$gray-700: #3b404a !default;
 $gray-800: #272C35 !default;
 $gray-900: #20252C !default;
 $black:    #0d1013 !default;
@@ -62,7 +62,7 @@ $colors: map-merge((
   "gray-dark":  $gray-800
 ), $colors);
 
-$primary:       $blue !default;
+$primary:       $purple !default;
 $secondary:     $gray-300 !default;
 $success:       $green !default;
 $info:          $blue !default;
@@ -82,15 +82,20 @@ $theme-colors: map-merge((
   "light":       $light,
   "dark":        $dark,
   "darker":      $gray-900,
-  'activeadmin': #4F7883,
-  'springshow':  #A33C3A,
-  'mymode':      #E2837D,
-  'everme':      #5B46A5,
-  'amei':        #D43964,
-  'bitehub':     #3359BF,
-  'fcwr':        #DE42F1,
-  'dashboard':   #222229,
-  'hce':         #4456DD,
+  "blue":        $blue,
+  "indigo":      $indigo,
+  "purple":      $purple,
+  "pink":        $pink,
+  "red":         $red,
+  "orange":      $orange,
+  "yellow":      $yellow,
+  "green":       $green,
+  "teal":        $teal,
+  "cyan":        $cyan,
+  "white":       $white,
+  "gray":        $gray-600,
+  "gray-dark":   $gray-800,
+  "transparent": transparent
 ), $theme-colors);
 // stylelint-enable
 //

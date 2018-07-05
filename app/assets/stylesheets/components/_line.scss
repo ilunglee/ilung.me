@@ -1,0 +1,16 @@
+.line-y {
+  position: absolute;
+  left: 50%;
+  width: 1px;
+  background: $gray-700;
+  @include transform(translateX(-50%));
+
+  &.top    { top: 0; }
+  &.bottom { bottom: 0; }
+
+  & > * {
+    position: absolute;
+    left: 50%;
+    @include transform(translateX(-50%));
+  }
+}

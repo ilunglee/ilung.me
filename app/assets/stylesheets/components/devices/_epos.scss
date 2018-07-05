@@ -1,0 +1,90 @@
+@keyframes print {
+  0%   { @include transform(translateY(0%)); }
+  20%  { @include transform(translateY(-100%)); }
+  100% { @include transform(translateY(-100%)); }
+}
+
+.epos-artboard {
+  position: relative;
+  width: 100%;
+  min-width: 100px;
+
+  &::before {
+    display: block;
+    padding-top: 100%;
+    content: '';
+  }
+
+  .device-frame {
+    @extend %frame;
+    background: $epos-bg;
+    border: 2px solid $epos-border;
+    border-radius: $border-radius;
+  }
+
+  .device-body {
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    z-index: 11;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    width: 64%;
+    height: 64%;
+    @include transform(translate(-50%, -50%));
+
+    img { height: 15%; }
+  }
+
+  .device-head {
+    position: absolute;
+    top: 0;
+    right: 0;
+    left: 0;
+
+    span {
+      position: absolute;
+      bottom: 0;
+      left: $spacer;
+      z-index: 11;
+      width: 40%;
+      height: 5px;
+      background: $epos-border;
+      border-radius: $border-radius $border-radius 0 0;
+    }
+  }
+
+  .paper {
+    position: absolute;
+    top: 0;
+    left: 50%;
+    width: 60%;
+    @include transform(translateX(-50%));
+
+    &::before {
+      display: block;
+      padding-top: 60%;
+      content: '';
+    }
+
+    .paper-content {
+      position: absolute;
+      top: 0;
+      right: 0;
+      bottom: 0;
+      left: 0;
+      padding: $spacer / 2;
+      overflow: hidden;
+      background: $white;
+      @include animation(print 5s infinite linear);
+    }
+
+    .line {
+      display: block;
+      height: 3px;
+      margin-bottom: $spacer / 3;
+      background: $gray-200;
+    }
+  }
+}

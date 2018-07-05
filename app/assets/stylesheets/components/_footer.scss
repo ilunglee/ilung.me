@@ -1,6 +1,8 @@
 #footer {
   z-index: $zindex-footer;
 
+  .logo { height: $font-size-base; }
+
   @include media-breakpoint-up(md) {
     position: fixed;
     right: 0;

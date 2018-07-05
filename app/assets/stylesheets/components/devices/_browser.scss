@@ -1,0 +1,39 @@
+.browser-artboard {
+  position: relative;
+  width: 100%;
+  background: $browser-bg;
+  border: 2px solid $browser-border;
+  border-radius: $border-radius;
+
+  &::before {
+    display: block;
+    padding-top: $browser-ratio;
+    content: '';
+  }
+
+  .device-frame { @extend %frame; }
+
+  .device-header {
+    @extend %header;
+    border-bottom: 1px solid $browser-border;
+
+    .ctrls {
+      display: flex;
+
+      span {
+        display: block;
+        width: $spacer / 2;
+        height: $spacer / 2;
+        margin-right: $spacer / 2;
+        border-radius: 50%;
+      }
+    }
+  }
+
+  .device-body {
+    position: relative;
+    flex: 1;
+    overflow: hidden;
+    img { width: 100%; }
+  }
+}

@@ -1,3 +1,7 @@
 nav.navbar.navbar-expand-lg.navbar-dark.fixed-top
   = link_to root_path, class: 'navbar-brand' do
     = image_tag 'logo.png'
+  ul.navbar-nav.ml-auto
+    li.nav-item
+      a.shine.btn.btn-outline-primary.bg-transparent.text-warning.font-weight-bold[href="#"]
+        = t('.hire')

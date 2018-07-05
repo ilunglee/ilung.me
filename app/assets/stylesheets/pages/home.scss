@@ -2,5 +2,6 @@ body.home {
   #hero {
     height: 100vh;
     .logo { height: 80px; }
+    .btn-scroll { background: $body-bg; }
   }
 }

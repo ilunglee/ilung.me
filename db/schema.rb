@@ -50,8 +50,14 @@ ActiveRecord::Schema.define(version: 20180704061425) do
   end
 
   create_table "projects", force: :cascade do |t|
-    t.string "name"
+    t.string "title"
     t.text "description"
+    t.string "browser"
+    t.string "mobile"
+    t.string "video"
+    t.string "background_color"
+    t.integer "position"
+    t.text "devices", default: [], array: true
     t.datetime "created_at", null: false
     t.datetime "updated_at", null: false
   end
