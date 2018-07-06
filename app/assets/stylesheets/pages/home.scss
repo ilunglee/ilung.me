@@ -1,7 +1,45 @@
+@keyframes rotate {
+  0%   { @include transform(rotate(0deg)); }
+  20%  { @include transform(rotate(15deg)); }
+  50% { @include transform(rotate(90deg)); }
+  75% { @include transform(rotate(180deg)); }
+  100% { @include transform(rotate(360deg)); }
+}
+
 body.home {
   #hero {
     height: 100vh;
     .logo { height: 80px; }
     .btn-scroll { background: $body-bg; }
+
+    .shapes {
+      position: absolute;
+      top: 0;
+      right: 0;
+      bottom: 0;
+      left: 0;
+      z-index: -1;
+
+      div {
+        opacity: 0.5;
+        @include animation(rotate 5s infinite ease-in-out);
+
+        &:nth-child(1) { @include triangle(80px, $purple); }
+        &:nth-child(2) { @include square(80px, $yellow); }
+        &:nth-child(3) { @include circle(80px, $red); }
+        &:nth-child(4) { @include triangle(80px, $blue); }
+        &:nth-child(5) { @include circle(80px, $green); }
+      }
+    }
+
+    @include media-breakpoint-down(md) {
+      .logo { height: $display3-size; }
+      h2 { font-size: $display3-size; }
+
+      h4 {
+        font-size: $h5-font-size;
+        line-height: 1.5;
+      }
+    }
   }
 }

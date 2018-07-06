@@ -1,10 +1,11 @@
 section#hero.rounded-0.d-flex.justify-content-center.align-items-center.mb-0.text-center
   .container
-    h2.display-2.mb-3
-      = t('.heading')
-      = image_tag 'logo-full.png', class: 'logo ml-4'
-    h4.text-secondary
-      span[data-js='typed' data-typed-options={ strings: t('.taglines') }.to_json]
+    .heading
+      h2.display-2.mb-3
+        = t('.heading')
+        = image_tag 'logo-full.png', class: 'logo ml-md-4'
+      h4.text-secondary
+        span[data-js='typed' data-typed-options={ strings: t('.taglines') }.to_json]
   .line-y.bottom.h-25
     = link_to '#projects',
               class: 'btn-scroll btn btn-outline-secondary text-white shine',
@@ -12,3 +13,7 @@ section#hero.rounded-0.d-flex.justify-content-center.align-items-center.mb-0.tex
       = t('.projects')
       br/
       = fa_icon('chevron-down')
+
+  .shapes[data-js='float']
+    - 5.times do
+      div

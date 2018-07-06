@@ -1,0 +1,20 @@
+@mixin triangle($size, $color) {
+  width: 0;
+  height: 0;
+  border-right: $size / 2 solid transparent;
+  border-bottom: $size solid $color;
+  border-left: $size / 2 solid transparent;
+}
+
+@mixin circle($size, $color) {
+  width: $size;
+  height: $size;
+  background: $color;
+  border-radius: 50%;
+}
+
+@mixin square($size, $color) {
+  width: $size;
+  height: $size;
+  background: $color;
+}
