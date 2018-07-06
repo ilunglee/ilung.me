@@ -1,0 +1,10 @@
+= simple_form_for @contact,
+                  remote: true,
+                  html: { id: 'contact-form', autocomplete: 'off' },
+                  defaults: { input_html: { class: 'terminal' } } do |f|
+  = f.input :name
+  = f.input :email,
+            as: :string
+  = f.input :message,
+            input_html: { rows: 1, data: { js: 'auto-grow' } }
+  = f.button :submit, class: 'btn-link px-0'

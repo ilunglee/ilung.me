@@ -1,0 +1,10 @@
+section.bg-darker.py-6[id='contact']
+  .container-fluid
+    .text-center.mb-5
+      h4.display-4= t('.title')
+      h4.text-secondary= t('.description')
+    .row
+      .col-lg-6.mx-auto
+        = render 'components/devices/terminal' do
+          = render 'contacts/form'
+

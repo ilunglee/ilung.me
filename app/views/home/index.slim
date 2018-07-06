@@ -1,3 +1,9 @@
 = render 'hero'
 = render 'projects'
-= render 'clients'
+= render 'contact'
+
+= javascript_include_tag 'activate-power-mode'
+coffee:
+  POWERMODE.colorful = true
+  POWERMODE.shake    = false
+  $(document).on('input', POWERMODE)

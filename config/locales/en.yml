@@ -5,6 +5,11 @@ en:
     url:      &URL   https://ilung.me
     email:    &EMAIL ilung.me@gmail.com
 
+  helpers:
+    submit:
+      contact:
+        create: Submit ↵
+
   home:
     hero:
       heading: Hello I'm
@@ -14,6 +19,9 @@ en:
       projects: See My Work
     projects:
       more: and more coming soon
+    contact:
+      title:       Have an idea?
+      description: Let's chat!
 
   components:
     nav:

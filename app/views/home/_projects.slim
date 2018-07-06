@@ -1,8 +1,7 @@
-section#projects
+section[id='projects']
   .container-fluid
     .row
       = render @projects, cached: true
-
       .col.d-flex.justify-content-center.align-items-center
         h4.text-secondary.my-6
           = t('.more')
@@ -10,6 +9,5 @@ section#projects
           span.dots.bounce
             - %w[primary warning danger].each do |color|
               span[class="text-#{color}"] .
-
   .line-y.top.h-50
 

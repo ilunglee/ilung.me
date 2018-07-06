@@ -101,7 +101,9 @@ gem 'faker'
 # Use TypeStore for json attributes
 gem 'activerecord-typedstore'
 # Speed up rails
-gem 'bootsnap', require: 'bootsnap/setup'
+# gem 'bootsnap', require: 'bootsnap/setup'
+# Emoji
+gem 'gemoji'
 
 # Rails 5 missing gem support
 # gem 'activemodel-serializers-xml', git: 'https://github.com/rails/activemodel-serializers-xml'

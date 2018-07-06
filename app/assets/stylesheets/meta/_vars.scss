@@ -5,15 +5,17 @@ $browser-ratio: 120%;
 $iphone-ratio:  217%;
 
 // Color
-$overlay-bg:     rgba($dark, 0.3);
-$browser-bg:     $dark;
-$browser-border: $black;
-$iphone-bg:      $dark;
-$iphone-border:  $black;
-$square-bg:      $white;
-$square-border:  $black;
-$epos-bg:        $dark;
-$epos-border:    $black;
+$overlay-bg:      rgba($dark, 0.3);
+$browser-bg:      $dark;
+$browser-border:  $black;
+$terminal-bg:     $black;
+$terminal-border: $black;
+$iphone-bg:       $dark;
+$iphone-border:   $black;
+$square-bg:       $white;
+$square-border:   $black;
+$epos-bg:         $dark;
+$epos-border:     $black;
 
 // Z-Indexes
 $zindex-footer: 999;

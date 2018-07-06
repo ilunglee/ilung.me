@@ -5,12 +5,15 @@ html
     = tag :meta, name:     'turbolinks-cache-control', content: 'no-preview'
     = tag :meta, name:     'viewport',                 content: 'width=device-width, initial-scale=1, maximum-scale=1, user-scalable=no'
     = tag :meta, name:     'google',                   content: 'notranslate'
-    = tag :meta, name:     'title',                    content: t(:app_name, scope: %i[variables])
-    = tag :meta, name:     'description',              content: t(:brief, scope: %i[variables])
-    = tag :meta, property: 'og:title',                 content: t(:app_name, scope: %i[variables])
-    = tag :meta, property: 'og:url',                   content: t(:url, scope: %i[variables])
-    = tag :meta, property: 'og:description',           content: t(:brief, scope: %i[variables])
+    = tag :meta, name:     'title',                    content: t(:app_name, scope: :variables)
+    = tag :meta, name:     'description',              content: t(:brief, scope: :variables)
+    = tag :meta, property: 'og:title',                 content: t(:app_name, scope: :variables)
+    = tag :meta, property: 'og:url',                   content: t(:url, scope: :variables)
+    = tag :meta, property: 'og:description',           content: t(:brief, scope: :variables)
     = tag :meta, property: 'og:image',                 content: image_url('logo.png')
+    = tag :meta, name:     'mobile-web-app-capable',   content: 'yes'
+    = tag :meta, name:     'application-name',         content: t(:app_name, scope: :variables)
+    = tag :meta, name:     'apple-mobile-web-app-capable', content: 'yes'
     = stylesheet_link_tag    'application', 'data-turbolinks-track' => true, media: 'all'
     = javascript_include_tag 'application', 'data-turbolinks-track' => true
     = csrf_meta_tags
@@ -19,3 +22,4 @@ html
     = render 'components/nav'
     = yield
     = render 'components/footer'
+

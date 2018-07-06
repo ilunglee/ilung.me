@@ -11,6 +11,10 @@ ActiveAdmin.setup do |config|
                 id: 'current_admin_user',
                 priority: 99
 
+      menu.add  label: proc { menu_label('Site Settings', icon: 'settings-gear-65') },
+                id: 'settings',
+                priority: 98
+
       menu.add  label: proc { menu_label('Admin Users') },
                 id: 'admin_users',
                 url: proc { admin_admin_users_path },

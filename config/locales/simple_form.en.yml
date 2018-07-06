@@ -11,14 +11,13 @@ en:
     error_notification:
       default_message: "Please review the problems below:"
     # Examples
-    # labels:
-    #   defaults:
-    #     password: 'Password'
-    #   user:
-    #     new:
-    #       email: 'E-mail to sign in.'
-    #     edit:
-    #       email: 'E-mail.'
+    labels:
+      # defaults:
+      #   password: 'Password'
+      contact:
+        name:    What's your name?
+        email:   Email address?
+        message: Tell me more about the project
     # hints:
     #   defaults:
     #     username: 'User name to sign in.'

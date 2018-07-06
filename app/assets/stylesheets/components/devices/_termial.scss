@@ -1,0 +1,50 @@
+.termial-artboard {
+  position: relative;
+  width: 100%;
+  background: $terminal-bg;
+  border: 2px solid $terminal-border;
+  border-radius: $border-radius;
+
+  .device-header {
+    @extend %header;
+    border-bottom: 1px solid $terminal-border;
+
+    .ctrls {
+      display: flex;
+
+      span {
+        display: block;
+        width: $spacer / 2;
+        height: $spacer / 2;
+        margin-right: $spacer / 2;
+        border-radius: 50%;
+      }
+    }
+  }
+
+  .device-body {
+    position: relative;
+    flex: 1;
+    overflow: hidden;
+  }
+
+  .control-label {
+    color: $secondary;
+  }
+
+  .help-block {
+    @extend .small;
+    font-weight: $font-weight-bold;
+  }
+
+  .form-control {
+    padding: 0;
+    color: $warning;
+    background: transparent;
+    border: 0;
+    outline: none;
+    @include appearance(none);
+    @include box-shadow(none);
+    @include autofill($warning);
+  }
+}

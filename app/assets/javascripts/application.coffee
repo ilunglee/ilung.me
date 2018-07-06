@@ -29,6 +29,7 @@ window.App = {}
 
 onDOMReady = ->
   $('[data-js="typed"]').appTyped()
+  $('[data-js="auto-grow"]').appAutoGrow()
   $('[data-js="smooth-scroll"]').smoothScroll()
 
 $(document).on('page:load turbolinks:load', onDOMReady)

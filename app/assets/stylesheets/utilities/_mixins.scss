@@ -4,6 +4,11 @@
   -webkit-animation: #{$value};
 }
 
+@mixin appearance($value) {
+  appearance: #{$value};
+  -webkit-appearance: #{$value};
+}
+
 @mixin non-selectable {
   user-select: none;
   -webkit-user-select: none;
@@ -41,4 +46,14 @@
   text-overflow: ellipsis;
   -webkit-line-clamp: $lines;
   -webkit-box-orient: vertical;
+}
+
+@mixin autofill($color) {
+  &:-webkit-autofill,
+  &:-webkit-autofill:hover,
+  &:-webkit-autofill:focus {
+    @include box-shadow(none);
+    @include transition(background-color 5000s ease-in-out 0s);
+    -webkit-text-fill-color: $color;
+  }
 }
