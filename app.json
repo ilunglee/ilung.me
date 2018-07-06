@@ -1,0 +1,52 @@
+{
+  "name": "ilung",
+  "description": "my portfolio site",
+  "scripts": {
+    "postdeploy": "rails db:migrate && rails db:seed:all"
+  },
+  "env": {
+    "BUNDLE_GITHUB__COM": {
+      "required": true
+    },
+    "S3_REGION": {
+      "required": true
+    },
+    "S3_ACCESS_KEY": {
+      "required": true
+    },
+    "S3_BUCKET": {
+      "required": true
+    },
+    "S3_SECRET_KEY": {
+      "required": true
+    },
+    "GOOGLE_API_PRIVATE_KEY": {
+      "required": true
+    },
+    "GOOGLE_API_EMAIL": {
+      "required": true
+    },
+    "GOOGLE_TRACKING_CODE": {
+      "required": true
+    }
+  },
+  "environments": {
+    "test": {
+      "scripts": {
+        "test": "bundle exec rspec"
+      }
+    }
+  },
+  "formation": {},
+  "addons": [
+    "heroku-postgresql:hobby-basic"
+  ],
+  "buildpacks": [
+    {
+      "url": "heroku/ruby"
+    },
+    {
+      "url": "https://github.com/jonathanong/heroku-buildpack-ffmpeg-latest.git"
+    }
+  ]
+}
