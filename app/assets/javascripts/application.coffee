@@ -32,6 +32,7 @@ onDOMReady = ->
   $('[data-js="auto-grow"]').appAutoGrow()
   $('[data-js="float"]').appFloat()
   $('[data-js="showcase"]').appShowcase()
+  $('[data-js="ellipsis"]').appEllipsis()
   $('[data-js="smooth-scroll"]').smoothScroll()
 
 $(document).on('page:load turbolinks:load', onDOMReady)

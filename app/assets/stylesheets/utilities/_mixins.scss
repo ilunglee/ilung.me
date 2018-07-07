@@ -38,13 +38,14 @@
 }
 
 @mixin ellipsis($lines: 2, $line-height: $line-height-base, $font-size: $font-size-base) {
-  display: -webkit-box;
   height: calc(#{$font-size} * #{$line-height} * #{$lines});
   overflow: hidden;
   font-size: $font-size;
   line-height: $line-height;
   text-overflow: ellipsis;
-  -webkit-line-clamp: $lines;
+  // -webkit-line-clamp: $lines;
+  // display: -webkit-box;
+  // this does not compile...
   -webkit-box-orient: vertical;
 }
 
