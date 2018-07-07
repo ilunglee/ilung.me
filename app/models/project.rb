@@ -4,7 +4,6 @@ class Project < ApplicationRecord
 
   mount_uploader :browser, CbStem::MediaUploader
   mount_uploader :mobile,  CbStem::MediaUploader
-  mount_uploader :video,   CbStem::MediaUploader
 
   acts_as_list add_new_at: :top
 
@@ -21,8 +20,11 @@ class Project < ApplicationRecord
     CbStem::MediaUploader::IMAGE_TYPES
   end
 
-  def video_extension_whitelist
-    %i[gif]
+  def video_object
+    return if video.blank?
+    VideoInfo.new(video)
+  rescue VideoInfo::UrlError
+    nil
   end
 
   private

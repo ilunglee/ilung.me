@@ -1,18 +1,30 @@
 .col-md-6.px-0
-  .project[style="background-color: #{project.background_color}"]
-    .content.d-flex.flex-column
-      .body
-        .info
-          h5.text-warning= project.title
-          p.description.mb-0= project.description
-        .previews
-          - if project.devices.include? 'browser'
-            = render 'components/devices/browser' do
-              = image_tag project.browser_url(:lg)
-          - if project.devices.include? 'iphone'
-            = render 'components/devices/iphone' do
-              = image_tag project.mobile_url(:lg)
-          - if project.devices.include? 'square'
-            = render 'components/devices/square'
-          - if project.devices.include? 'epos'
-            = render 'components/devices/epos'
+  .project[data-js='showcase' id="#{dom_id(project)}"]
+    .project-overlay.d-flex.justify-content-center.align-items-center
+      .btn-play.fa-stack.fa-lg
+        = fa_icon('play-circle-o', class: 'fa-stack-1x text-white outer')
+        = fa_icon('play-circle', class: 'fa-stack-1x', style: "color: #{project.background_color}")
+    .project-viewport[style="background-color: #{project.background_color}"]
+      nav.navbar.navbar-expand.navbar-dark.showcase-ctrls.fixed-top
+        ul.navbar-nav.ml-auto
+          li.nav-item
+            a.btn.border.border-white.font-weight-bold[data-js='showcase' data-action='hide' data-target="##{dom_id(project)}"]
+              | ESC
+      .content.d-flex.flex-column.container
+        .body
+          .info.mb-3
+            h5.text-warning= project.title
+            p.description.mb-0= project.description
+          .previews
+            - if project.devices.include? 'browser'
+              = render 'components/devices/browser' do
+                = image_tag project.browser_url(:md)
+            - if project.devices.include? 'iphone'
+              = render 'components/devices/iphone' do
+                = image_tag project.mobile_url(:md)
+            - if project.devices.include? 'square'
+              = render 'components/devices/square'
+            - if project.devices.include? 'epos'
+              = render 'components/devices/epos'
+          .video-embed
+            == project.video_object&.embed_code(url_attributes: { rel: 0, controls: 0, showinfo: 0 })

@@ -13,11 +13,7 @@ body.home {
     .btn-scroll { background: $body-bg; }
 
     .shapes {
-      position: absolute;
-      top: 0;
-      right: 0;
-      bottom: 0;
-      left: 0;
+      @extend %fill-parent;
       z-index: -1;
 
       div {

@@ -27,10 +27,5 @@ RSpec.describe Project, type: :model do
       expect(subject.mobile_extension_whitelist).
         to eq(CbStem::MediaUploader::IMAGE_TYPES)
     end
-
-    it 'only allows gif types for video' do
-      expect(subject.video_extension_whitelist).
-        to eq(%i[gif])
-    end
   end
 end
