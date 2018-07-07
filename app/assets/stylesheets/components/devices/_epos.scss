@@ -78,6 +78,7 @@
       overflow: hidden;
       background: $white;
       @include animation(print 5s infinite linear);
+      @include box-shadow(0 8px 32px rgba($black, 0.1));
     }
 
     .line {

@@ -1,7 +1,7 @@
 = simple_form_for @contact,
                   remote: true,
-                  html: { id: 'contact-form', autocomplete: 'off' },
-                  defaults: { input_html: { class: 'terminal' } } do |f|
+                  html: { id: 'contact-form' },
+                  defaults: { input_html: { autocomplete: 'nope', class: 'terminal' } } do |f|
   = f.input :name
   = f.input :email,
             as: :string
