@@ -8,4 +8,7 @@ body {
   }
 }
 
-section { position: relative; }
+section {
+  position: relative;
+  overflow-x: hidden;
+}

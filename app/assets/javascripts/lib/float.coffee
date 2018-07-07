@@ -2,6 +2,7 @@ class App.Float
 
   constructor: (@options, @element) ->
     @$element = $(@element)
+    @windowW  = $(window).width()
 
     defaults = {
       vertSpeed: 1
@@ -20,7 +21,9 @@ class App.Float
     parentW = ($(window).width() - $el.width()) / 2
     rand    = Math.random() * index * 1000
     current = $el
-    $el.css 'top', 0
+    $el.css
+      top: -100
+      display: 'block'
 
     floatInterval = setInterval ->
       current.css
@@ -31,10 +34,11 @@ class App.Float
             parseFloat(v) + opts.vertSpeed
         left: (n, v) ->
           (Math.sin((new Date).getTime() / (opts.horiSpeed * 1000) + rand) + 1) * parentW
-    , 15
+    , 20
 
-    $(window).resize ->
-      clearInterval(floatInterval)
+    $(window).resize =>
+      if @windowW  != $(window).width()
+        clearInterval(floatInterval)
 
   _init: ->
     @$element.children().each (i, e)=>
@@ -44,7 +48,8 @@ class App.Float
     @_init()
 
     $(window).resize =>
-      @_init()
+      if @windowW  != $(window).width()
+        @_init()
 
 $.widget.bridge 'appFloat', App.Float
 

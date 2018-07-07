@@ -1,14 +1,16 @@
 @keyframes rotate {
   0%   { @include transform(rotate(0deg)); }
   20%  { @include transform(rotate(15deg)); }
-  50% { @include transform(rotate(90deg)); }
-  75% { @include transform(rotate(180deg)); }
+  50%  { @include transform(rotate(90deg)); }
+  75%  { @include transform(rotate(180deg)); }
   100% { @include transform(rotate(360deg)); }
 }
 
 body.home {
   #hero {
     height: 100vh;
+    overflow: hidden;
+
     .logo { height: 80px; }
     .btn-scroll { background: $body-bg; }
 
@@ -17,14 +19,25 @@ body.home {
       z-index: -1;
 
       div {
+        display: none;
         opacity: 0.5;
         @include animation(rotate 5s infinite ease-in-out);
 
-        &:nth-child(1) { @include triangle(80px, $purple); }
-        &:nth-child(2) { @include square(80px, $yellow); }
-        &:nth-child(3) { @include circle(80px, $red); }
-        &:nth-child(4) { @include triangle(80px, $blue); }
-        &:nth-child(5) { @include circle(80px, $green); }
+        $_size: 80px;
+        &:nth-child(1) { @include triangle($_size, $purple); }
+        &:nth-child(2) { @include square($_size, $yellow); }
+        &:nth-child(3) { @include circle($_size, $red); }
+        &:nth-child(4) { @include triangle($_size, $blue); }
+        &:nth-child(5) { @include circle($_size, $green); }
+
+        @include media-breakpoint-down(md) {
+          $_size: 60px;
+          &:nth-child(1) { @include triangle($_size, $purple); }
+          &:nth-child(2) { @include square($_size, $yellow); }
+          &:nth-child(3) { @include circle($_size, $red); }
+          &:nth-child(4) { @include triangle($_size, $blue); }
+          &:nth-child(5) { @include circle($_size, $green); }
+        }
       }
     }
 
@@ -38,4 +51,6 @@ body.home {
       }
     }
   }
+
+  #projects h4 { font-size: $h5-font-size; }
 }

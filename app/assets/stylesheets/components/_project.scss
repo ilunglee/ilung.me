@@ -43,7 +43,7 @@
     background: $overlay-bg;
     content: '';
 
-    @include  media-breakpoint-down(xs) {
+    @include  media-breakpoint-down(sm) {
       padding-top: $project-ratio * 1.2;
     }
   }
