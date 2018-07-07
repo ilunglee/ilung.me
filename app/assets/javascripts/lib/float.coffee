@@ -37,7 +37,7 @@ class App.Float
     , 20
 
     $(window).resize =>
-      if @windowW  != $(window).width()
+      if @windowW != $(window).width()
         clearInterval(floatInterval)
 
   _init: ->
@@ -48,7 +48,7 @@ class App.Float
     @_init()
 
     $(window).resize =>
-      if @windowW  != $(window).width()
+      if @windowW != $(window).width()
         @_init()
 
 $.widget.bridge 'appFloat', App.Float

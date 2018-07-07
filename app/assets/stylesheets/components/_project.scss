@@ -24,7 +24,13 @@
       }
 
       .body { justify-content: center; }
-      .previews { display: none; }
+
+      .description { height: auto; }
+
+      .description .short,
+      .previews {
+        display: none;
+      }
     }
   }
 
@@ -33,6 +39,8 @@
     .showcase-ctrls {
       display: none;
     }
+
+    .description .long { display: none; }
   }
 
   &::before {
@@ -86,6 +94,10 @@
 
       i { display: block; }
     }
+
+    @include  media-breakpoint-down(sm) {
+      opacity: 1;
+    }
   }
 
   .project-viewport {
@@ -112,7 +124,7 @@
   }
 
   .description {
-    @include ellipsis($lines: 2);
+    @include ellipsis;
   }
 
   .previews {

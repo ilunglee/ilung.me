@@ -14,7 +14,11 @@
         .body
           .info.mb-3
             h5.text-warning= project.title
-            p.description.mb-0= project.description
+            .description
+              p.short.mb-0[data-js='ellipsis' data-original=project.description]
+                = project.description
+              p.long.mb-0
+                = project.description
           .previews
             - if project.devices.include? 'browser'
               = render 'components/devices/browser' do
