@@ -10,6 +10,11 @@ en:
       contact:
         create: Submit ↵
 
+  activerecord:
+    errors:
+      messages:
+        format: format not valid
+
   home:
     hero:
       heading: Hello I'm
