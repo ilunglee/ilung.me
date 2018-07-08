@@ -4,6 +4,7 @@ en:
     brief:    &BRIEF Hello I am I-Lung, I build website & apps!
     url:      &URL   https://ilung.me
     email:    &EMAIL ilung.me@gmail.com
+    order:    &ORDER order
 
   helpers:
     submit:
@@ -14,6 +15,18 @@ en:
     errors:
       messages:
         format: format not valid
+    models:
+      project:
+        one:   Project
+        other: Projects
+    attributes:
+      contact:
+        statuses/pending:     Pending
+        statuses/in_progress: In Progress
+        statuses/won:         Won
+        statuses/lost:        Lost
+      project:
+        position: *ORDER
 
   home:
     hero:

@@ -4,6 +4,10 @@ ActiveAdmin.setup do |config|
       # menu.add label: proc { menu_label('Analytics', icon: 'dashboard-29') },
       #          id: 'analytics',
       #          priority: 1
+
+      menu.add label: proc { menu_label('Inbox', icon: 'file-download-89') },
+               id: 'inbox',
+               priority: 40
     end
 
     admin.build_menu :utility_navigation do |menu|
