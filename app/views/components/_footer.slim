@@ -9,7 +9,7 @@ footer#footer.navbar.navbar-dark.bg-darker.navbar-expand
         .navbar-text.small.d-flex.align-items-center
           - logo = image_tag 'logo-full.png', class: 'logo mx-2'
           == t('.copyright', year: Time.zone.now.year, logo: logo)
-      .col-md-3.d-flex.align-items-center.justify-content-center
+      .col-md-3.d-flex.align-items-center.justify-content-center.pb-4.pb-md-0
         ul.navbar-nav.mx-auto.mr-md-0
           - t('.links').each do |link|
             li.nav-item
