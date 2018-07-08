@@ -2,3 +2,6 @@ en:
   active_admin:
     panels:
       reset_password: Reset Password
+      status:         Status
+      project:
+        assets: Media

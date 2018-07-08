@@ -9,7 +9,7 @@ class Project < ApplicationRecord
 
   validates :title, :description,
             presence: true
-
+  validates :video, url_format: true, allow_blank: true
   validate :valid_devices
 
   def browser_extension_whitelist
@@ -25,6 +25,13 @@ class Project < ApplicationRecord
     VideoInfo.new(video)
   rescue VideoInfo::UrlError
     nil
+  end
+
+  def self.permitted_params
+    %i[
+      title description mobile browser devices video
+      position background_color
+    ]
   end
 
   private
