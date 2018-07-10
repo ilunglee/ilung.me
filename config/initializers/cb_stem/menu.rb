@@ -1,9 +1,9 @@
 ActiveAdmin.setup do |config|
   config.namespace :admin do |admin|
     admin.build_menu do |menu|
-      # menu.add label: proc { menu_label('Analytics', icon: 'dashboard-29') },
-      #          id: 'analytics',
-      #          priority: 1
+      menu.add label: proc { menu_label('Analytics', icon: 'dashboard-29') },
+               id: 'analytics',
+               priority: 1
 
       menu.add label: proc { menu_label('Inbox', icon: 'file-download-89') },
                id: 'inbox',

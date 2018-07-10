@@ -2,7 +2,7 @@ ActiveAdmin.register Project do
   decorate_with Admin::ProjectDecorator
 
   menu label: proc { menu_label(Project.model_name.human(count: 2), icon: 'code-editor') },
-       priority: 1
+       priority: 2
 
   permit_params Project.permitted_params
 

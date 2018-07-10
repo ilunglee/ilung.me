@@ -112,7 +112,7 @@ ActiveAdmin.setup do |config|
   # roots for each namespace.
   #
   # Default:
-  config.root_to = 'admin_users#index'
+  config.root_to = 'google_analytics#index'
 
   # == Admin Comments
   #
