@@ -3,7 +3,7 @@ en:
     app_name: &APP_NAME ilung.me
     brief:    &BRIEF Hello I am I-Lung, I build website & apps!
     url:      &URL   https://ilung.me
-    email:    &EMAIL ilung.me@gmail.com
+    email:    &EMAIL hello@ilung.me
     order:    &ORDER order
 
   helpers:
